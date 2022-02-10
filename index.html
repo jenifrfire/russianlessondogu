@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">                                  
+    <title>jenishbek</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ <script>
+
+
+
+      const PiggyAddBank = {
+          coins: {
+              1: 0,
+              3: 0,
+              5: 0,
+              10: 0,
+          },
+          addCoint : function (value) {{}
+            if ( value in this.coins ){
+                this.coins[value]++  ;                                         // [value]++ просто прибавление
+            }else{
+                console.log("Такой наминации нет");
+            }                                                               
+          },
+          getTotal : function () {
+            let total = 0;
+
+            for (const value  in this.coins ){
+               total +=  value * this.coins[value];
+            //    total = total + (value * coins[value]);
+            }
+            return total ;
+          },
+        }
+      PiggyAddBank.addCoint(1);
+      PiggyAddBank.addCoint(3);
+      PiggyAddBank.addCoint(5);
+      PiggyAddBank.addCoint(10);
+      PiggyAddBank.addCoint(10);
+      PiggyAddBank.addCoint(15);
+
+      console.log(PiggyAddBank.getTotal());
+ </script>
+</body>
+</html>
